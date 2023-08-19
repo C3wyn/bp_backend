@@ -15,7 +15,7 @@ module.exports = ({ strapi }) => ({
                 });
             }
             
-            
+            strapi.io.emit('openOrders', JSON.stringify({action: 'New Order', result}));
 
             ctx.body = result;
         }catch(err){

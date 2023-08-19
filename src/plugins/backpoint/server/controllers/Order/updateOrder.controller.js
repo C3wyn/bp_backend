@@ -10,12 +10,13 @@ const OrderStatus = [
 module.exports = ({ strapi }) => ({
   async updateOrder(ctx) {
     try {
-        if(await this.validateRequest(ctx)){
-            var result = await strapi.entityService.update('api::order.order', ctx.request.query['id'], {
-                data: await this.createUpdateBody(ctx.request.query['id'], ctx.request.body['status'])
-            });
-        }
-        ctx.body = result;
+      if(await this.validateRequest(ctx)){
+          var result = await strapi.entityService.update('api::order.order', ctx.request.query['id'], {
+              data: await this.createUpdateBody(ctx.request.query['id'], ctx.request.body['status'])
+          });
+      }
+      strapi.io.emit('openOrders', JSON.stringify({action: 'Updated Order', result}));
+      ctx.body = result;
     }catch(err){
         console.log(err);
         ctx.status = 400;
