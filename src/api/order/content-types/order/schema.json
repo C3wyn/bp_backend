@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "items": {
+      "type": "json"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Created",
+        "Accepted",
+        "In Progress",
+        "Done"
+      ],
+      "required": true,
+      "default": "Created"
+    },
+    "deliveryType": {
+      "type": "enumeration",
+      "enum": [
+        "Eat here",
+        "Take Away"
+      ],
+      "required": true
+    },
+    "orderDescription": {
+      "type": "text"
+    },
+    "pickUpDate": {
+      "type": "datetime"
+    },
+    "acceptedTime": {
+      "type": "datetime"
+    },
+    "finishedTime": {
+      "type": "datetime"
+    }
+  }
+}
