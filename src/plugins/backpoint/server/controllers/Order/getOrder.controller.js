@@ -8,14 +8,6 @@ module.exports = ({ strapi }) => ({
             }
         });
 
-        for(var order of orderEntries){
-            console.log(order);
-            for(var item of order['items']){
-                console.log(item);
-                let product = await strapi.entityService.findOne('api::product.product');
-            }
-        }
-
         ctx.body = orderEntries;
     }
 })

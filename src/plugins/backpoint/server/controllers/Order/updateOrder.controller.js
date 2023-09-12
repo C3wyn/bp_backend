@@ -35,7 +35,6 @@ module.exports = ({ strapi }) => ({
         break;
     }
     updateBody['status']=status;
-    console.log(updateBody);
     return updateBody;
   },
 

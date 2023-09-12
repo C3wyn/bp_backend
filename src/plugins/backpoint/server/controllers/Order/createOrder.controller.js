@@ -70,9 +70,9 @@ module.exports = ({ strapi }) => ({
             const ingredient = item.selectedIngredients[j];
             if (
               typeof ingredient !== 'object' ||
-              typeof ingredient.name !== 'string' ||
-              typeof ingredient.selected !== 'boolean' ||
-              typeof ingredient.default !== 'boolean'
+              typeof ingredient.Name !== 'string' ||
+              typeof ingredient.Selected !== 'boolean' ||
+              typeof ingredient.Default !== 'boolean'
             ) {
               return `Ingredient at index ${j} in the "selectedIngredients" array of item at index ${i} has an invalid structure.`;
             }
@@ -110,6 +110,7 @@ module.exports = ({ strapi }) => ({
                 {
                     product: obj,
                     selectedIngredients: product['selectedIngredients'],
+                    selectedExtras: product['selectedExtras'],
                     customerDescription: product['customerDescription']
                 }
             );
