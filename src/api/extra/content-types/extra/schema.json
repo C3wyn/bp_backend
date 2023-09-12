@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "extras",
+  "info": {
+    "singularName": "extra",
+    "pluralName": "extras",
+    "displayName": "Extra"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "Extras"
+    }
+  }
+}

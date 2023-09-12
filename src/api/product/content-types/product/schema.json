@@ -42,6 +42,12 @@
     },
     "Description": {
       "type": "text"
+    },
+    "Extras": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::extra.extra",
+      "inversedBy": "products"
     }
   }
 }

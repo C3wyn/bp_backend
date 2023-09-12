@@ -8,7 +8,7 @@ module.exports = ({ strapi }) => {
       perMessageDeflate: false,
       
       cors: {
-        origin: "http://localhost:3000",
+        origin: "*",
         methods: ["GET", "POST"],
         credentials: true
       }
