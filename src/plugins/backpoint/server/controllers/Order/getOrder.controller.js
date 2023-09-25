@@ -8,6 +8,6 @@ module.exports = ({ strapi }) => ({
             }
         });
 
-        ctx.body = orderEntries;
+        ctx.body = {data: orderEntries};
     }
 })
